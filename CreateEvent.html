@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="utf-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <meta name="description" content="">
+                <meta name="author" content="">
+                <title>Home</title>
+                <link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+                <link href="../assets/plugins/chartist-js/dist/chartist.min.css" rel="stylesheet">
+                <link href="../assets/plugins/chartist-js/dist/chartist-init.css" rel="stylesheet">
+                <link href="../assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css" rel="stylesheet">
+                <link href="../assets/plugins/c3-master/c3.min.css" rel="stylesheet">
+                <link href="css/style.css" rel="stylesheet">
+              
+                <link href="css/colors/blue.css" id="theme" rel="stylesheet">
+              <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+                <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-auth.js"></script>
+                <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-firestore.js"></script>
+                <style>
+                        .Tech{
+                        border-style: solid;
+                        padding: 20px;
+                        border-color: lightgray;
+                        margin-bottom: 50px;
+                        width: 300px;
+                            height: 400px;
+                        align-self: center;
+                        display: inline-block;
+                        vertical-align:top;
+                        *display:inline;
+                            margin: 50px;
+                        }
+                        .Par{
+                        height: 100%;
+                        width: 100%;
+                        display: flex;
+                            margin: 50px;
+                    }
+                        </style>
+            </head>
+            
+            <body class="fix-header fix-sidebar card-no-border">
+                <div class="preloader">
+                    <svg class="circular" viewBox="25 25 50 50">
+                        <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
+                </div>
+                <!-- ============================================================== -->
+                <!-- Main wrapper - style you can find in pages.scss -->
+                <!-- ============================================================== -->
+                <div id="main-wrapper">
+                    <!-- ============================================================== -->
+                    <!-- Topbar header - style you can find in pages.scss -->
+                    <!-- ============================================================== -->
+                    <header class="topbar">
+                        <nav class="navbar top-navbar navbar-toggleable-sm navbar-light">
+                            <!-- Logo -->
+                            <!-- ============================================================== -->
+                            <div class="navbar-header">
+                                <a class="navbar-brand" href="index.html">
+                                    <!-- Logo text --><span>
+                                     <h2 style="color: white"><b>Hello World</b></h2></span> </a>
+                            </div>
+                            <!-- ============================================================== -->
+                            <!-- End Logo -->
+                            <!-- ============================================================== -->
+                            <div class="navbar-collapse">
+                                <!-- ============================================================== -->
+                                <!-- toggle and nav items -->
+                                <!-- ============================================================== -->
+                                <ul class="navbar-nav mr-auto mt-md-0">
+                                    <!-- This is  -->
+                                    <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="mdi mdi-menu"></i></a> </li>
+                                    <li class="nav-item"> <a class="nav-link sidebartoggler hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
+                                    <!-- Search -->
+                                    <li class="nav-item hidden-sm-down search-box"> <a class="nav-link hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
+                                        <form class="app-search">
+                                            <input type="text" class="form-control" placeholder="Search & enter"> <a class="srh-btn"><i class="ti-close"></i></a> </form>
+                                    </li>
+                                </ul>
+                                <!-- User profile and search -->
+                                <ul class="navbar-nav my-lg-0">
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle text-muted text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-message"></i>
+                                            
+                                        </a>
+                                        
+                                    </li>
+                                    <!-- Profile -->
+                                    
+                                </ul>
+                            </div>
+                        </nav>
+                    </header>
+                    <!-- End Topbar header -->
+                    <!-- Left Sidebar-->
+                    <aside class="left-sidebar">
+                        <!-- Sidebar scroll-->
+                        <div class="scroll-sidebar">
+                            <!-- User profile -->
+                            <div class="user-profile" style="background: url(../assets/images/background/user-info.jpg) no-repeat;">
+                                <!-- User profile image -->
+                                <div class="profile-img"> <img src="../assets/images/users/profile.png" alt="user" /> </div>
+                                <!-- User profile text-->
+                                <div class="profile-text"> <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Markarn Doe</a>
+                                    <div class="dropdown-menu animated flipInY"> <a href="#" class="dropdown-item"><i class="ti-user"></i> My Profile</a> <a href="#" class="dropdown-item"><i class="ti-wallet"></i> My Balance</a> <a href="#" class="dropdown-item"><i class="ti-email"></i> Inbox</a>
+                                        <div class="dropdown-divider"></div> <a href="#" class="dropdown-item"><i class="ti-settings"></i> Account Setting</a>
+                                        <div class="dropdown-divider"></div> <a href="login.html" class="dropdown-item"><i class="fa fa-power-off"></i> Logout</a> </div>
+                                </div>
+                            </div>
+                            <!-- End User profile text-->
+                            <!-- Sidebar navigation-->
+                            <nav class="sidebar-nav">
+                                <ul id="sidebarnav">
+                                    <li class="nav-small-cap">PERSONAL</li>
+                                    <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">NGOs </span></a>
+                                        <ul aria-expanded="false" class="collapse">
+                                            <li><a href="index.html">NGO 1</a></li>
+                                            <li><a href="index2.html">NGO 2</a></li>
+                                            <li><a href="index3.html">NGO 3</a></li>
+                                            <li><a href="index4.html">NGO 4</a></li>
+                                            <li><a href="index5.html">NGO 5</a></li>
+                                            <li><a href="index6.html">NGO 6</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="active"> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">Events</span></a>
+                                        <ul aria-expanded="false" class="collapse">
+                                            <li><a href="success.html">Completed events</a></li>
+                                            <li><a href="upcoming.html" class="active">Upcoming events</a></li>
+                                        </ul>
+                                    </li>
+                        
+                                        </ul>
+                                    </li> 
+                                </ul>
+                            </nav>
+                            <!-- End Sidebar navigation -->
+                        </div>
+                        <!-- End Sidebar scroll-->
+                        <!-- Bottom points-->
+                        <div class="sidebar-footer">
+                            <!-- item--><a href="" class="link" data-toggle="tooltip" title="Logout"><i class="mdi mdi-power"></i></a> </div>
+                        <!-- End Bottom points-->
+                    </aside>
+      
+<div class="page-wrapper">
+            <div class="container-fluid">
+                <div class="row page-titles">
+                    <div class="col-md-5 col-8 align-self-center">
+                        <h3 class="text-themecolor">Welcome</h3>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">Index</a></li>
+                            <li class="breadcrumb-item active">Dashboard</li>
+                        </ol>
+                    </div>
+                </div>   
+              </div>
+              <div id="createEventForm">
+              <form action="" method="post" onsubmit="return validate()" name="myForm">
+      
+        <div id="createEventForm">
+        <table>
+            <tr>
+                    <td class="X">
+                      <h4>NGO Name :</h4>
+                    </td>
+          
+                    <td>
+                      <input
+                        type="text"
+                        class="name"
+                        id="name_ngo"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                        <td class="X">
+                          <h4>NGO Email :</h4>
+                        </td>
+              
+                        <td>
+                          <input
+                            type="text"
+                            
+                            class="name"
+                            id="email_ngo"
+                          />
+                        </td>
+                      </tr>
+                      <tr>
+                            <td class="X">
+                              <h4>NGO Contact Number :</h4>
+                            </td>
+                  
+                            <td>
+                              <input
+                                type="text"
+                                placeholder="Enter Event name"
+                                class="name"
+                                id="ngo_cnum"
+                              />
+                            </td>
+                          </tr>
+          
+        <tr>
+          <td class="X">
+            <h4>Event Name :</h4>
+          </td>
+
+          <td>
+            <input
+              type="text"
+              placeholder="Enter Event name"
+              class="name"
+              id="Event"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td class="X">
+            <h4>Address :</h4>
+          </td>
+          <td>
+            <input
+              type="text"
+              placeholder="Enter Address name"
+              class="name"
+              id="Add"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td class="X">
+            <h4>Host's Name :</h4>
+          </td>
+          <td>
+            <input
+              type="text"
+              placeholder="Enter Host's name"
+              class="name"
+              id="Host"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td class="X">
+            <h4>Host's Email ID</h4>
+          </td>
+          <td>
+            <input
+              type="text"
+              placeholder="Enter Host's Email ID"
+              name="email id"
+              id="Email"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td class="X">
+            <h4>Date :</h4>
+          </td>
+          <td>
+            <input
+              type="date"
+              placeholder="Enter Host's Email ID"
+              name="emailid"
+              id="date"
+              class="X"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td class="X">
+            <h4>Phone no.:</h4>
+          </td>
+          <td>
+            <input
+              type="text"
+              placeholder="Enter phone number"
+              name="phone no."
+              maxlength="10"
+              id="Phone"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <h4 class="X">Detailed Description</h4>
+          </td>
+          <td>
+            <textarea
+              type="text"
+              placeholder="Drop a message"
+              name=" description"
+              rows="3"
+              cols="50"
+              id="Desc"
+            >
+            </textarea>
+          </td>
+        </tr>
+      </table>
+      </div>
+      <br /><br />
+
+      
+    </form>
+           <input type="submit" id="Sub" value="Submit" style="margin-left: 500px" />
+        </div>
+    </div>
+    <script src="../assets/plugins/jquery/jquery.min.js"></script>
+    <script src="../assets/plugins/bootstrap/js/tether.min.js"></script>
+    <script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/jquery.slimscroll.js"></script>
+    <script src="js/waves.js"></script>
+    <script src="js/sidebarmenu.js"></script>
+    <script src="../assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <script src="../assets/plugins/sparkline/jquery.sparkline.min.js"></script>
+    <script src="js/custom.min.js"></script>
+    <script src="../assets/plugins/chartist-js/dist/chartist.min.js"></script>
+    <script src="../assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js"></script>
+    <script src="../assets/plugins/d3/d3.min.js"></script>
+    <script src="../assets/plugins/c3-master/c3.min.js"></script>
+    <script src="js/dashboard1.js"></script>
+    <script src="../assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
+    <script src="js/config.js"></script>
+<script src="js/CreateanEvent.js"></script>
+</body>
+</html>

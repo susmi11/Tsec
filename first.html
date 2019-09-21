@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link href="css/first.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-firestore.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    </head>
+    <body>
+           
+  <div class="login-box" id="login-box">
+        <div class="lb-header">
+          <a href="#" class="active" id="login-box-link">Login</a>
+          <a href="#" id="signup-box-link">Register NGO</a>
+        </div>
+        <h4>User Login</h4>
+        <div class="social-login" id="userLogin">
+          <a href="#">
+            <i class="fa fa-facebook fa-lg"></i>
+            Login in with facebook
+          </a>
+          <a href="#" id="login_user">
+            <i class="fa fa-google-plus fa-lg"></i>
+            log in with Google
+          </a>
+        </div>
+        <div id="ngoLogin">
+        <form class="email-login">
+        <h4> NGO Login </h4>
+          <div class="u-form-group">
+            <input type="email" placeholder="Email" id="email_field"/>
+          </div>
+          <div class="u-form-group">
+            <input type="password" placeholder="Password" id="password_field"/>
+          </div>
+          
+        </div>
+          <div class="u-form-group">
+            <a href="#" class="forgot-password">Forgot password?</a>
+          </div>
+        </form>
+        <div class="u-form-group">
+                <button id="loginNGO">Log in</button>
+              </div>
+        <form class="email-signup">
+            <div class="u-form-group">
+                <input type="ngo_name" placeholder="NGO Name" id="ngo_name"/>
+              </div>
+              <div class="u-form-group">
+                  <input type="ngo_site" placeholder="NGO Official WebSite" id="ngo_site"/>
+                </div>
+                  <div class="u-form-group">
+                      <input type="ngo_cause" placeholder="NGO Cause" id="ngo_cause"/>
+                    </div>
+                  <div class="u-form-group">
+                      <input type="ngo_desc" placeholder="Short Description of NGO" id="ngo_desc"/>
+                    </div>
+                    <div class="u-form-group">
+                        <input type="number" placeholder="Contact Number" id="ngo_cnum"/>
+                      </div>
+                      <div class="u-form-group">
+                          <input type="ngo_upi" placeholder="BHIM UPI" id="ngo_upi"/>
+                        </div>
+          <div class="u-form-group">
+            <input type="email" placeholder="Email" id="emailNGO"/>
+          </div>
+          <div class="u-form-group">
+            <input type="password" placeholder="Password"/>
+          </div>
+          <div class="u-form-group">
+            <input type="password" placeholder="Confirm Password" id="passNGO"/>
+          </div>
+        </form>
+          <div class="u-form-group" id="register">
+            <button id="regNGO" onclick="veri()">Register</button>
+          </div>
+        
+      </div>
+            <script src="js/config.js"></script>
+            <script src="js/first.js"></script>
+            <script src="js/firstngo.js"></script>
+            <script src="js/regNgo.js"></script>
+            <script>
+                function veri() {
+                  alert("Thank you for registering\nYour account will be activated after verification");
+                }
+                </script>  
+    </body>
+</html>
