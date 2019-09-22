@@ -52,6 +52,9 @@ a.link:hover,a.link:focus{
 	height:auto;
 	display:inline-block
 }
+#uidd{
+	display: block;
+}
 .img-rounded{
 	border-radius:4px
 }

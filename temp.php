@@ -40,7 +40,7 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
+
   </head>
   <body>
    <div class="row">
@@ -57,11 +57,13 @@
         <div class="form-group">
          <label for="amount">Amount <span class="help"></span></label>
          <input type="number" title="TXN_AMOUNT" name="TXN_AMOUNT" class="form-control" placeholder="Amount" id="payAmm"> </div>
-         </form>
-        <button type="submit" class="btn waves-effect waves-light btn-rounded btn-primary" id="donate">Submit</button>
+         <button type="submit" class="btn waves-effect waves-light btn-rounded btn-primary">Submit</button> 
+        </form>
+        <br>
+        <button type="submit" class="btn waves-effect waves-light btn-rounded btn-primary" id="donate">Confirm</button>
        
       </div>
-     </div>
+     </div> 
      <script src="js/config.js"></script>
       <script src="js/donate.js"></script>
   </body>

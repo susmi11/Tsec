@@ -29,6 +29,7 @@ function auth() {
       ngo_cause = doc.data().cause;
       ngo_site = doc.data().site;
       ngo_user = doc.data().name;
+      ngo_fund = doc.data().funds;
       console.log(ngo_email);
 
       document.getElementById('name_ngo').innerHTML = ngo_name;
@@ -39,5 +40,6 @@ function auth() {
       document.getElementById('Cause').innerHTML = ngo_cause;
       document.getElementById('NGO_Site').innerHTML = ngo_site;
       document.getElementById('User').innerHTML = ngo_user;
+      document.getElementById('Funds').innerHTML = ngo_fund;
     });
 }

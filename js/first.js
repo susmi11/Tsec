@@ -85,12 +85,14 @@ $("#signup-box-link").click(function(){
   document.getElementById("register").style.display = "block";
   document.getElementById("loginNGO").style.display = "none";
   document.getElementById("userLogin").style.display = "none";
+  document.getElementById("uidd").style.display = "none";
   $("#login-box-link").removeClass("active");
   $("#signup-box-link").addClass("active");
 });
 $("#login-box-link").click(function(){
   $(".email-login").delay(100).fadeIn(100);;
   $(".email-signup").fadeOut(100);
+  document.getElementById("uidd").style.display = "block";
   document.getElementById("userLogin").style.display = "block";
   document.getElementById("loginNGO").style.display = "block";
   document.getElementById("register").style.display = "none";

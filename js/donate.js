@@ -19,14 +19,55 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     }
   });
 
+const increment = firebase.firestore.FieldValue.increment(1);
+var x;
 
+var y;
+var z;
 function donate() {
     console.log("hgsdf");
-
+    
     firebase.firestore().collection("Donors").doc().set({
         Amount: payA.value,
         NGO: payNgo.value,
-        email: getEmail
+        email: getEmail,
 
     });
+    contribute();
+    ngo_funds();
 }
+
+function contribute() {
+  firebase.firestore().collection("Donate").doc(getEmail).set({
+    count : increment,
+  },{merge: true});
+}
+var temp;
+function ngo_funds() {
+  firebase.firestore().collection("NGO").where("name","==",payNgo.value).get().then(function(querySnapshot) {
+    querySnapshot.forEach(function (doc) {
+      console.log(payA.value);
+      x = Number(payA.value);
+      y = doc.data().funds;
+      console.log(y);
+      z = Number(y);
+      console.log(z);
+      temp = doc.data().email;
+     console.log(temp);
+      z = z + x;
+      console.log(z);
+      sett(temp);
+  })
+  });
+  
+  
+  
+  
+  
+}
+function sett(temp) {
+  firebase.firestore().collection("NGO").doc(temp).set({
+    funds: z,
+  },{merge: true});
+}
+
